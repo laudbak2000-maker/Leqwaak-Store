@@ -1,201 +1,157 @@
 <!DOCTYPE html><html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRIADO POR @LEQWAAK STORE</title> 
-    <link rel="apple-touch-icon" href="images/tela.png">
-    <link rel="icon" type="image/png" href="images/profile_1.png">
-    <link rel="manifest" href="manifest.json">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Discord">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#000000">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-image: url('images/IMG-0484.jpg');
-            background-size: cover;
-            background-position: center;
-            overflow: hidden;
-            user-select: none; 
-        }
-        .container {
-            width: 90%;
-            max-width: 400px;
-            position: relative;
-        }
-        .login-box {
-            background-color: rgba(54, 54, 54, 0.3); 
-            padding: 10px; 
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            color: #000000;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRIADO POR @LEQWAAK STORE</title> 
+  <link rel="apple-touch-icon" href="images/tela.png">
+  <link rel="icon" type="image/png" href="images/profile_1.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Discord">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#000000">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('images/IMG-0484.jpg');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      user-select: none; 
+    }
+    .container {
+      width: 90%;
+      max-width: 400px;
+      position: relative;
+    }
+    .login-box {
+      background-color: rgba(54, 54, 54, 0.3); 
+      padding: 10px; 
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      color: #000000;
+    }
 
-        .login-box h2 {
-            margin-bottom: 15px;
-            font-size: 22px;
-            color: #ffffff; 
-        }
-        .login-box input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: none;
-            border-radius: 5px;
-            background-color: #1C1C1C;
-            color: #ecf0f1;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
-        .login-box button {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #555;
-            color: #ecf0f1;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-bottom: 10px; 
-        }
-        .login-box button:hover {
-            background-color: #a000a0;
-        }
-        .login-box img {
-            width: 150px;
-            margin-bottom: 15px;
-            border-radius: 50%;
-        }
-        .error {
-            color: #FF0000;
-            margin-top: 10px;
-            display: none;
-        }
-        .add-to-home {
-            position: fixed;
-            top: 200px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 15px;
-            border-radius: 10px;
-            display: none;
-            text-align: center;
-            z-index: 1000;
-        }
-        .add-to-home button {
-            background-color: #555;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            margin-top: 10px;
-            cursor: pointer;
-        }
-    </style>
+    .login-box h2 {
+      margin-bottom: 15px;
+      font-size: 22px;
+      color: #ffffff; 
+    }
+    .login-box input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: #1C1C1C;
+      color: #ecf0f1;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #555;
+      color: #ecf0f1;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-bottom: 10px; 
+    }
+    .login-box button:hover {
+      background-color: #a000a0;
+    }
+    .login-box img {
+      width: 150px;
+      margin-bottom: 15px;
+      border-radius: 50%;
+    }
+    .error {
+      color: #FF0000;
+      margin-top: 10px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
-    <div class="add-to-home" id="add-to-home">
-        <p>Adicione este App à tela de início para funcionar corretamente.</p>
-        <button id="android-video">Como adicionar no Android</button>
-        <button id="ios-video">Como adicionar no iPhone</button>
+
+  <div class="container">
+    <div class="login-box">
+      <img src="images/leqwaak.gif" alt="Logo">
+      <h2>Login</h2>
+      <input type="password" id="password" placeholder="Digite sua Key">
+      <button onclick="validateLogin()">Entrar</button>
+      <button onclick="window.open('https://discord.gg/rJJGpKUA', '_blank')">Discord Oficial</button>
+      <div class="action-buttons">
+        <button id="ios-button" style="display: none;">
+          <img src="images/alerta.png" alt="Alerta">
+          Adicionar no iOS
+        </button>
+        <button id="android-button" style="display: none;">
+          <img src="images/alerta.png" alt="Alerta">
+          Adicionar no Android
+        </button>
+      </div>
+      <div class="error" id="error-message">Senha incorreta!</div>
     </div>
-    <div class="container">
-        <div class="login-box">
-            <img src="images/leqwaak.gif" alt="Logo">
-            <h2>Login</h2>
-            <input type="password" id="password" placeholder="Digite sua Key">
-            <button onclick="validateLogin()">Entrar</button>
-            <button onclick="window.open('https://discord.gg/rJJGpKUA', '_blank')">Discord Oficial</button>
-            <div class="action-buttons">
-                <button id="ios-button" style="display: none;">
-                    <img src="images/alerta.png" alt="Alerta">
-                    Adicionar no iOS
-                </button>
-                <button id="android-button" style="display: none;">
-                    <img src="images/alerta.png" alt="Alerta">
-                    Adicionar no Android
-                </button>
-            </div>
-            <div class="error" id="error-message">Senha incorreta!</div>
-        </div>
-    </div>
+  </div>
 
-    <script>
-        const validPasswords = [
-            'auxilioleqwaakstore00',
-        ];
+  <script>
+    const validPasswords = [
+      'auxilioleqwaakstore00',
+    ];
 
-        function validateLogin() {
-            var password = document.getElementById('password').value;
-            
-            if (validPasswords.includes(password)) {
-                window.location.href = 'dexter/伊塔洛令人羨慕的敏感度顯露出來.html'; 
-            } else {
-                document.getElementById('error-message').style.display = 'block';
-            }
-        }
+    function validateLogin() {
+      var password = document.getElementById('password').value;
+      if (validPasswords.includes(password)) {
+        window.location.href = 'dexter/伊塔洛令人羨慕的敏感度顯露出來.html'; 
+      } else {
+        document.getElementById('error-message').style.display = 'block';
+      }
+    }
 
-        function redirectToPlatformSpecificLink() {
-            const iosLink = 'https://youtu.be/mO3-TGwrujQ?si=GXGRZmI1KcQsKt9W';
-            const androidLink = 'https://youtu.be/MlEf0T4MHDQ?si=OgmCHCDKvcUPuGbf';
-            
-            document.getElementById('android-video').addEventListener('click', function() {
-                window.location.href = androidLink;
-            });
-            document.getElementById('ios-video').addEventListener('click', function() {
-                window.location.href = iosLink;
-            });
-        }
+    function detectDevice() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-        function detectDevice() {
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      if (/windows|macintosh|linux/i.test(userAgent)) {
+        document.getElementById('blocked-message').style.display = 'flex';
+        document.querySelector('.container').style.display = 'none';
+        return;
+      }
+    }
 
-            if (/windows|macintosh|linux/i.test(userAgent)) {
-                document.getElementById('blocked-message').style.display = 'flex';
-                document.querySelector('.container').style.display = 'none';
-                return;
-            }
+    detectDevice();
 
-            if (window.matchMedia('(display-mode: standalone)').matches) {
-                document.getElementById('add-to-home').style.display = 'none';
-            } else {
-                document.getElementById('add-to-home').style.display = 'block';
-            }
-        }
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
 
-        detectDevice();
-        redirectToPlatformSpecificLink();
-
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && (e.key === 'I' || e.key === 'U' || e.key === 'J')) {
-                e.preventDefault();
-            }
-            if (e.key === 'F12') {
-                e.preventDefault();
-            }
-        });
+    document.addEventListener('keydown', function(e) {
+      if (e.ctrlKey && (e.key === 'I' || e.key === 'U' || e.key === 'J')) {
+        e.preventDefault();
+      }
+      if (e.key === 'F12') {
+        e.preventDefault();
+      }
+    });
 
     document.addEventListener('gesturestart', function (e) {
-        e.preventDefault();
+      e.preventDefault();
     });
+
     document.addEventListener('wheel', function (e) {
-        if (e.ctrlKey) {
-            e.preventDefault();
-        }
+      if (e.ctrlKey) {
+        e.preventDefault();
+      }
     }, { passive: false });
-    </script>
+  </script>
 
 </body></html>
