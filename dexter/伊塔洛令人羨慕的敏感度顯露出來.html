@@ -1,3 +1,4 @@
+<!-- CÓDIGO COMPLETO COMEÇA AQUI -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -141,7 +142,7 @@
       border-radius: 50%;
       background: white;
       cursor: pointer;
-      margin-top: -0px; /* Agora a bolinha fica centralizada certinha */
+      margin-top: -0px;
     }
 
     select {
@@ -216,8 +217,8 @@
   </div>
 
   <div id="info" class="tab-content">
-    <div class="info-text"><strong>Modelo:</strong> Android</div>
-    <div class="info-text"><strong>Key:</strong> auxilioleqwaakstore</div>
+    <div class="info-text"><strong>Modelo:</strong> <span id="modeloSistema">Detectando...</span></div>
+    <div class="info-text"><strong>Key:</strong> auxilioleqwaakstore00</div>
     <div class="line"></div>
     <div class="info-text"><strong>Dicas:</strong> Ative Funções no Treinamento.</div>
   </div>
@@ -240,9 +241,18 @@
   };
 
   function injetar() {
-    // Tenta abrir o Free Fire direto sem ir para a Play Store
     window.location.href = "freefire://";
+  }
 
+  // Detectar Android ou iOS
+  const modeloSpan = document.getElementById("modeloSistema");
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  if (/android/i.test(userAgent)) {
+    modeloSpan.textContent = "Android";
+  } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    modeloSpan.textContent = "iOS";
+  } else {
+    modeloSpan.textContent = "Desconhecido";
   }
 
   // partículas no fundo
@@ -310,3 +320,4 @@
 
 </body>
 </html>
+<!-- CÓDIGO COMPLETO TERMINA AQUI -->
